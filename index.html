@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaqa e Madina Online Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Navbar */
+        nav {
+            background-color: rgba(137, 186, 22, 0.7); /* Transparent navbar */
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the navbar */
+            display: flex;
+            justify-content: space-between; /* Space between logo and home link */
+            align-items: center;
+        }
+        nav img.logo {
+            height: 50px; /* Set the height of the logo */
+            margin-left: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 auto; /* Centers the home link */
+            display: block;
+        }
+
+        /* Banner (Logo Space) */
+        .banner {
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240204/pngtree-hand-drawn-ramadan-kareem-background-with-traditional-lantern-and-al-quran-image_15586738.png');
+            background-size: cover;
+            background-position: center;
+            height: 70vh; /* Increased banner height for logo space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3em; /* Font size for logo text */
+            margin-top: 70px; /* To avoid overlap with the fixed navbar */
+            position: relative;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .banner h1 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+            gap: 30px;
+        }
+        .service-card {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-card img {
+            width: 100%;
+            height: auto;
+            max-height: 400px; /* Increased max height for larger poster images */
+            object-fit: cover; /* Ensures image covers the space properly */
+            margin-bottom: 15px; /* Space between image and text */
+        }
+        .service-card h3 {
+            color: #89ba16;
+            margin-top: 10px;
+        }
+        .service-card p {
+            color: #555;
+        }
+
+        /* Poster Section between Services and Articles */
+        .poster {
+            width: 100%;
+            height: 500px;
+            background-image: url('https://via.placeholder.com/1200x500'); /* Poster image */
+            background-size: cover;
+            background-position: center;
+            margin: 30px 0;
+        }
+
+        /* Articles Section */
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Responsive columns */
+            padding: 30px 20px;
+            gap: 30px;
+        }
+        .article {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .article img {
+            width: 100%;
+            height: auto;
+            max-height: 400px; /* Increased image size for easy viewing */
+            object-fit: cover;
+        }
+        .article h2 {
+            color: #89ba16;
+        }
+        .article p {
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #6c757d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer .contact-info {
+            margin-top: 15px;
+        }
+
+        /* Button */
+        .btn {
+            background-color: #89ba16;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #76a415;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 1024px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+            }
+            .banner h1 {
+                font-size: 2.5em; /* Smaller font size for larger screens like laptops */
+            }
+            .service-card img {
+                max-height: 350px; /* Slightly smaller image on medium screens */
+            }
+            .article img {
+                max-height: 350px; /* Smaller article image */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr; /* 1 column on small screens */
+            }
+            .banner h1 {
+                font-size: 2.2em; /* Smaller on tablet */
+            }
+        }
+
+        /* Extra small devices (phones) */
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 16px; /* Smaller font size for nav links */
+            }
+            .banner h1 {
+                font-size: 2em; /* Further reduced size for small screens */
+            }
+            .service-card img {
+                max-height: 250px; /* Smaller image size for small devices */
+            }
+            .article img {
+                max-height: 250px; /* Smaller image size for articles on mobile */
+            }
+        }
+        .poster img{
+            height: 500px;
+            width: 400px;
+            border: 2px solid #76a415;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="4bc53102-0ac5-4b36-91d5-896a8e000a40.jpg" alt="Institute Logo" class="logo">
+        <a href="#">Home</a>
+    </nav>
+
+    <div class="banner">
+        <h4>Khak E Madina Online Institute</h4>
+    </div>
+
+    <div class="services">
+        <div class="service-card">
+            <img src="https://alhafidzacademy.com/wp-content/uploads/elementor/thumbs/Learn-Quran-WIth-Online-Quran-Classes-qvzkr3yvw83aiuyg4w9yzr0jgx0zadmbkohtd7z19c.jpg" alt="Farz alom Course">
+            <h3>Farz alom Course</h3>
+        </div>
+        <div class="service-card">
+            <img src="data:image/png;base64,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" alt="Bukhari Sharif Course">
+            <h3>Bukhari Sharif Course</h3>
+        </div>
+        <div class="service-card">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/72/ca/5472ca97-441e-c032-c2c6-7022d3170b8c/AppIcon-0-0-1x_U007emarketing-0-10-0-sRGB-85-220.png/512x512bb.jpg" alt="Tafsir al-Quran Course">
+            <h3>Tafsir al-Quran Course</h3>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service-card">
+            <img src="https://play-lh.googleusercontent.com/C0xSkXENbY6hpWcKqmaVysWfKUaxL7RUY8WIdpAXMjUs2zXYbpXRBlA4OhmQbTAynQ" alt="Farz alom Course">
+            <h3>Madni Qaida Course</h3>
+        </div>
+        <div class="service-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQ7ws7yJNce0_ZteL0aJpWWVUZqBKSX9KXQ&s" alt="Bukhari Sharif Course">
+            <h3>Tajweed Al-Qur'an Course</h3>
+        </div>
+        <div class="service-card">
+            <img src="https://png.pngtree.com/thumb_back/fw800/background/20240729/pngtree-the-quran-book-with-rosary-on-the-table-image_15933870.jpg" alt="Tafsir al-Quran Course">
+            <h3>Bihar Shariat Course</h3>
+        </div>
+    </div>
+
+    <!-- Poster Section between Services and Articles -->
+    <div class="poster">
+        <img src="ba0b28c1-1478-4acb-918b-2510739d9a02.jpg" alt="">
+    </div>
+    <div class="poster">
+        <img src="f26412d4-1d1e-4a27-a4d1-0f252f5bba42.jpg" alt="">
+    </div>
+
+    <div class="articles">
+        <div class="article">
+            <img src="https://t4.ftcdn.net/jpg/06/79/35/13/360_F_679351371_YxNi13WmrDfkHvmerPUl3W8Uk2eAjd1s.jpg" alt="Understanding the Quran">
+            <h2>Understanding the Quran</h2>
+            <p>Article about the importance of reading and understanding the Quran.</p>
+        </div>
+        <div class="article">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4fFQR1af15Cdh2kx05B3y6_yxZ1SrIvlP5A&s" alt="Benefits of Learning Arabic">
+            <h2>Benefits of Learning Arabic</h2>
+            <p>Explore how learning Arabic can enhance your understanding of Islam.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <p>Contact: <br><a href="mailto:Khakemadinaonlineinstitute998@gmail.com">Khakemadinaonlineinstitute998@gmail.com</a> <br> | Phone: <a href="tel:+923286319822">+92 328 631 9822</a>
+            <h3 style="color: black;">Whatsapp: <a href="https://wa.me/923286319822">Khak e Madina Online Institute</a></h3></p>
+        </div>
+    </footer>
+
+</body>
+</html>
